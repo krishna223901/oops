@@ -1,0 +1,25 @@
+interface Animal {
+    void sound();
+    void sleep();
+}
+
+
+abstract class Mammal implements Animal {
+    void breathe() { System.out.println("Breathing..."); }
+}
+
+
+class Dog extends Mammal {
+    public void sound() { System.out.println("Barks"); }
+    public void sleep() { System.out.println("Sleeps"); }
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.sound();  
+        dog.sleep();  
+        dog.breathe(); 
+    }
+}
