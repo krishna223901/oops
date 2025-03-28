@@ -1,0 +1,23 @@
+public class Main {
+    public static void main(String[] args) {
+        
+        Parent parent1 = new Parent("John Doe", 45);
+        parent1.displayParentInfo();
+        parent1.showRole(); 
+
+        System.out.println();
+
+
+        Student student1 = new Student("Alice Doe", 20, "A", "Computer Science", "John Doe", 45);
+        student1.displayFullInfo();
+        student1.showRole
+
+        System.out.println();
+
+
+        Student student2 = new Student("Bob Smith", 22, "B", "Mathematics", "Jane Smith", 43);
+        student2.displayFullInfo
+        student2.showRole(); 
+    }
+}
+
