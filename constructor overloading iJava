@@ -1,0 +1,64 @@
+class Car {
+    private String model;
+    private String color;
+    private int year;
+    private double price;
+
+
+    public Car() {
+        this.model = "Unknown Model";
+        this.color = "Unknown Color";
+        this.year = 0;
+        this.price = 0.0;
+    }
+
+    public Car(String model, String color) {
+        this.model = model;
+        this.color = color;
+        this.year = 2020;  
+        this.price = 20000.0;  
+    }
+
+
+    public Car(String model, String color, int year) {
+        this.model = model;
+        this.color = color;
+        this.year = year;
+        this.price = 25000.0;  
+    }
+
+
+    public Car(String model, String color, int year, double price) {
+        this.model = model;
+        this.color = color;
+        this.year = year;
+        this.price = price;
+    }
+
+
+    public void displayDetails() {
+        System.out.println("Car Model: " + model);
+        System.out.println("Car Color: " + color);
+        System.out.println("Car Year: " + year);
+        System.out.println("Car Price: $" + price);
+        System.out.println();
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        Car car1 = new Car();
+        car1.displayDetails();
+
+        
+        Car car2 = new Car("Toyota Camry", "Blue");
+        car2.displayDetails();
+
+        Car car3 = new Car("Honda Accord", "Red", 2022);
+        car3.displayDetails();
+
+        Car car4 = new Car("Tesla Model S", "Black", 2023, 79999.99);
+        car4.displayDetails();
+    }
+}
