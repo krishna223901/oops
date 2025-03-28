@@ -1,0 +1,33 @@
+class NumberTask extends Thread {
+    public void run() {
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("Number: " + i);
+            try {
+                Thread.sleep(500); // Sleep for 0.5 seconds
+            } catch (InterruptedException e) {
+                System.out.println(e);
+            }
+        }
+    }
+}
+
+class LetterTask extends Thread {
+    public void run() {
+        for (char letter = 'A'; letter <= 'E'; letter++) {
+            System.out.println("Letter: " + letter);
+            try {
+                Thread.sleep(500); // Sleep for 0.5 seconds
+            } catch (InterruptedException e) {
+                System.out.println(e);
+            }
+        }
+    }
+}
+
+public class MultiTasking {
+    public static void main(String[] args) {
+        // Start both threads
+        new NumberTask().start();
+        new LetterTask().start();
+    }
+}
