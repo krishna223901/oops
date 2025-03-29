@@ -1,0 +1,42 @@
+import java.util.regex.*;
+
+public class RegexExample {
+
+    public static void main(String[] args) {
+
+        String email = "example@domain.com";
+        String emailPattern = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$"; // Simple email regex pattern
+
+        Pattern pattern = Pattern.compile(emailPattern);
+        Matcher matcher = pattern.matcher(email);
+
+        if (matcher.matches()) {
+            System.out.println(email + " is a valid email address.");
+        } else {
+            System.out.println(email + " is not a valid email address.");
+        }
+
+        String text = "My numbers are 123-456-7890 and 987-654-3210.";
+        String phonePattern = "\\d{3}-\\d{3}-\\d{4}"; 
+
+        Pattern phonePatternObj = Pattern.compile(phonePattern);
+        Matcher phoneMatcher = phonePatternObj.matcher(text);
+
+        System.out.println("Found phone numbers:");
+        while (phoneMatcher.find()) {
+            System.out.println(phoneMatcher.group());
+        }
+
+        String sentence = "The quick brown fox jumps over the lazy dog. The fox is fast!";
+        String wordToFind = "fox";
+        String wordPattern = "\\b" + wordToFind + "\\b"; // 
+
+        Pattern wordPatternObj = Pattern.compile(wordPattern, Pattern.CASE_INSENSITIVE); 
+        Matcher wordMatcher = wordPatternObj.matcher(sentence);
+
+        System.out.println("Found words:");
+        while (wordMatcher.find()) {
+            System.out.println(wordMatcher.group());
+        }
+    }
+}
